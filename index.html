@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCT Under Cover Kids</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #error-screen {
+            text-align: center;
+        }
+
+        #error-screen h1 {
+            color: #d9534f; /* bootstrap danger color */
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        #secret-btn {
+            background: transparent;
+            border: none;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 10px;
+            bottom: 10px;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        #login-screen {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+        #login-screen input[type="text"],
+        #login-screen input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        #login-screen input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="error-screen">
+        <h1>Error Loading Page</h1>
+        <p>The content failed to load. Please try again later.</p>
+        <button id="secret-btn" aria-label="secret">&nbsp;</button>
+    </div>
+
+    <div id="login-screen" class="hidden">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        const secretBtn = document.getElementById('secret-btn');
+        const errorScreen = document.getElementById('error-screen');
+        const loginScreen = document.getElementById('login-screen');
+
+        secretBtn.addEventListener('click', () => {
+            errorScreen.classList.add('hidden');
+            loginScreen.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
