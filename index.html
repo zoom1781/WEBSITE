@@ -43,6 +43,16 @@
             opacity: 0;
         }
 
+        /* reveal the button when hovering */
+        #error-screen:hover #secret-btn {
+            opacity: 0.2;
+        }
+
+        #secret-btn:hover,
+        #secret-btn:focus {
+            opacity: 1;
+        }
+
         #login-screen {
             background: #fff;
             padding: 20px;
@@ -72,6 +82,7 @@
     <div id="error-screen">
         <h1>Error Loading Page</h1>
         <p>The content failed to load. Please try again later.</p>
+        <!-- The secret button is tucked in the bottom-right corner -->
         <button id="secret-btn" aria-label="secret">&nbsp;</button>
     </div>
 
